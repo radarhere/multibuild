@@ -16,10 +16,7 @@ matrix:
       osx_image: xcode11
       env:
         - PYTHON_VERSION=3.7
-    - os: osx
-      osx_image: xcode10.1
-      env:
-        - PYTHON_VERSION=3.7
+        - TEST_BUILDS=1
 
 script:
   - export ENV_VARS_PATH="tests/env_vars.sh"

@@ -1,5 +1,8 @@
 # Test some library builders
 # Smoke test
+export ARCHS="x86_64"
+set ARCHS="x86_64"
+export ARCH_FLAGS="-arch x86_64"
 export BUILD_PREFIX="${PWD}/builds"
 rm_mkdir $BUILD_PREFIX
 source configure_build.sh
@@ -7,6 +10,8 @@ source library_builders.sh
 
 start_spinner
 
+export ARCHS="x86_64"
+set ARCHS="x86_64"
 suppress build_bzip2
 suppress build_openssl
 suppress build_libpng
