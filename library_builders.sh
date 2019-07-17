@@ -320,7 +320,7 @@ function build_openssl {
     fetch_unpack ${OPENSSL_DOWNLOAD_URL}/${OPENSSL_ROOT}.tar.gz
     check_sha256sum $ARCHIVE_SDIR/${OPENSSL_ROOT}.tar.gz ${OPENSSL_HASH}
     (cd ${OPENSSL_ROOT} \
-        && ./config no-ssl2 no-shared -fPIC --prefix=$BUILD_PREFIX \
+        && ./configure darwin64-x86_64-cc no-ssl2 no-shared -fPIC --prefix=$BUILD_PREFIX \
         && make -j4 \
         && make install)
     touch openssl-stamp
