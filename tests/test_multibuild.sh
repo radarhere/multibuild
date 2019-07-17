@@ -4,6 +4,19 @@ set -x
 source common_utils.sh
 source tests/utils.sh
 
+source tests/test_common_utils.sh
+source tests/test_fill_submodule.sh
+if [ -n "$IS_OSX" ]; then
+    source osx_utils.sh
+    get_macpython_environment $PYTHON_VERSION ${VENV:-""} $MB_PYTHON_OSX_VER
+    source tests/test_python_install.sh
+    source tests/test_fill_pyver.sh
+    source tests/test_fill_pypy_ver.sh
+    source tests/test_osx_utils.sh
+else
+    source manylinux_utils.sh
+    source tests/test_manylinux_utils.sh
+fi
 if [ -n "$TEST_BUILDS" ]; then
     if [ -n "$IS_OSX" ]; then
         MB_PYTHON_VERSION=${MB_PYTHON_VERSION:-$PYTHON_VERSION}
