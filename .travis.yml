@@ -16,6 +16,7 @@ matrix:
       osx_image: xcode11
       env:
         - PYTHON_VERSION=3.7
+        - MB_PYTHON_OSX_VER=10.9
         - TEST_BUILDS=1
 
 script:
