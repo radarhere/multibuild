@@ -319,6 +319,8 @@ function check_sha256sum {
 
 function build_openssl {
     if [ -e openssl-stamp ]; then return; fi
+    echo "torch"
+    echo ${OPENSSL_DOWNLOAD_URL}/${OPENSSL_ROOT}.tar.gz
     fetch_unpack ${OPENSSL_DOWNLOAD_URL}/${OPENSSL_ROOT}.tar.gz
     check_sha256sum $ARCHIVE_SDIR/${OPENSSL_ROOT}.tar.gz ${OPENSSL_HASH}
     (cd ${OPENSSL_ROOT} \
