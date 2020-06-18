@@ -21,27 +21,19 @@ source tests/utils.sh
 
 start_spinner
 
-suppress build_bzip2
-suppress build_openssl
-suppress build_libpng
-suppress build_libwebp
-suppress build_szip
-suppress build_swig
 # We need to find a failable test for build_github
 # It needs a standalone C library with ./configure script.
 # E.g. arb (below) requires a couple of other libraries.
 # Run here just for the output, even though they fail.
+echo "TORCH -1"
 (set +e ;
     build_github fredrik-johansson/arb 2.17.0 ;
     build_github glennrp/libpng v1.6.37 ;
     build_github wbhart/mpir mpir-3.0.0
     )
-suppress build_flex
-suppress build_openblas
-suppress build_tiff
-suppress build_lcms2
-suppress build_xz
+echo "TORCH 7"
 suppress build_freetype
+echo "TORCH 8"
 suppress build_libyaml
 if [ -z "$IS_OSX" ]; then
     # Gives compiler conformance error on macOS Sierra:

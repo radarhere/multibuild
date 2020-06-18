@@ -131,7 +131,9 @@ function build_jpeg {
 }
 
 function build_libpng {
+	echo "TORCH ZLIB"
     build_zlib
+	echo "TORCH ZLIB2"
     build_simple libpng $LIBPNG_VERSION https://download.sourceforge.net/libpng
 }
 
@@ -204,8 +206,11 @@ function build_libwebp {
 }
 
 function build_freetype {
+    echo "TORCH PNG"
     build_libpng
+    echo "TORCH BZIP2"
     build_bzip2
+    echo "TORCH FREETYPE"
     build_simple freetype $FREETYPE_VERSION https://download.savannah.gnu.org/releases/freetype
 }
 
