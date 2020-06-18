@@ -7,7 +7,7 @@ if [ -n "$IS_OSX" ]; then
     # Building on macOS
     export BUILD_PREFIX="${PWD}/builds"
     rm_mkdir $BUILD_PREFIX
-    source configure_build.sh
+    # configure_build.sh sourced in test_multibuild.sh
     source library_builders.sh
 else
     # Building on Linux
