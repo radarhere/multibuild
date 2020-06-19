@@ -16,7 +16,6 @@ MB_ML_VER=${MB_ML_VER:-1}
 if [ -n "$IS_OSX" ]; then
     # Default compilation flags for OSX
     source $MULTIBUILD_DIR/osx_utils.sh
-    PLAT=${PLAT:-$(macpython_arch_for_version $MB_PYTHON_VERSION)}
     if [[ $PLAT == intel ]]; then
         ARCH_FLAGS=${ARCH_FLAGS:-"-arch i386 -arch x86_64"}
     elif [[ $PLAT == x86_64 ]]; then
