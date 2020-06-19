@@ -23,6 +23,10 @@ matrix:
         - OPENSSL_HASH=ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16
     - os: osx
       env:
+        - MB_PYTHON_VERSION=2.7
+        - TEST_BUILDS=1
+    - os: osx
+      env:
         - MB_PYTHON_VERSION=pypy3.6-7.3
         - MB_PYTHON_OSX_VER=10.9
         - TEST_BUILDS=1
