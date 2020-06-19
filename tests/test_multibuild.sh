@@ -18,8 +18,8 @@ unset PYTHON_EXE
 
 if [ -n "$IS_OSX" ]; then
     source osx_utils.sh
-	PLAT=${PLAT:-$(macpython_arch_for_version $MB_PYTHON_VERSION)}
     MB_PYTHON_OSX_VER=${MB_PYTHON_OSX_VER:-$(macpython_sdk_for_version $MB_PYTHON_VERSION)}
+    PLAT=${PLAT:-$(macpython_arch_for_version $MB_PYTHON_VERSION)}
 
     get_macpython_environment $MB_PYTHON_VERSION ${VENV:-""} $MB_PYTHON_OSX_VER
     source tests/test_python_install.sh
