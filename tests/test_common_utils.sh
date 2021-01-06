@@ -44,8 +44,10 @@ rm_mkdir tmp_dir
 [ -e tmp_dir/afile ] && ingest "tmp_dir/afile should have been deleted"
 rmdir tmp_dir
 
-fetch_unpack https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz
-[ -d harfbuzz-2.7.4 ] || ingest ".tar.xz should have been unpacked"
+if [[ $(type -P "xz") ]]; then
+    fetch_unpack https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz
+    [ -d harfbuzz-2.7.4 ] || ingest ".tar.xz should have been unpacked"
+fi
 
 # Test suppress command
 function bad_cmd {
