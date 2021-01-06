@@ -61,6 +61,9 @@ suppress get_modern_cmake
 [ ${MB_PYTHON_VERSION+x} ] || ingest "\$MB_PYTHON_VERSION is not set"
 [ "$MB_PYTHON_VERSION" == "$PYTHON_VERSION" ] || ingest "\$MB_PYTHON_VERSION must be equal to \$PYTHON_VERSION"
 
+fetch_unpack https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz
+[ -d harfbuzz-2.7.4 ] || ingest ".tar.xz should have been unpacked"
+
 stop_spinner
 
 # Exit 1 if any test errors
