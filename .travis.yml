@@ -17,10 +17,12 @@ matrix:
       osx_image: xcode9.4
       env:
         - MB_PYTHON_VERSION=3.5
+        - TEST_BUILDS=1
     - os: osx
       osx_image: xcode9.3
       env:
         - MB_PYTHON_VERSION=3.5
+        - TEST_BUILDS=1
 
 script:
   - export ENV_VARS_PATH="tests/env_vars.sh"
