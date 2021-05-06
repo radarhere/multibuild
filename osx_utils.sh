@@ -403,7 +403,7 @@ function get_macpython_environment {
         rm get-pip.py
     else
         $PYTHON_EXE -m ensurepip
-        $PIP_CMD install --upgrade pip
+        $PIP_CMD install --force-reinstall --upgrade pip
     fi
 
     if [ -n "$venv_dir" ]; then
