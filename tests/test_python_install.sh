@@ -8,7 +8,11 @@ echo "virtualenv cmd: $VIRTUALENV_CMD"
 
 # Check that a pip install puts scripts on path
 # (Need setuptools >= 25.0.1 for delocate install).
+echo "torch1"
+pip --version
+echo "torch2"
 pip install "setuptools>=25"
+echo "torch3"
 install_delocate
 delocate-listdeps --version || ingest "Delocate not installed right"
 

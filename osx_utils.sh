@@ -10,7 +10,7 @@ MACPYTHON_URL=https://www.python.org/ftp/python
 MACPYTHON_PY_PREFIX=/Library/Frameworks/Python.framework/Versions
 WORKING_SDIR=working
 
-# As of 5 April 2021 - latest Python of each version with binary download
+# As of 4 May 2021 - latest Python of each version with binary download
 # available.
 # See: https://www.python.org/downloads/mac-osx/
 LATEST_2p7=2.7.18
