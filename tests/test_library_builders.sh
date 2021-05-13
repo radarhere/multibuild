@@ -21,6 +21,8 @@ source tests/utils.sh
 
 start_spinner
 
+suppress ensure_xz
+
 fetch_unpack https://github.com/harfbuzz/harfbuzz/releases/download/2.7.4/harfbuzz-2.7.4.tar.xz
 [ -d harfbuzz-2.7.4 ] || ingest ".tar.xz should have been unpacked"
 
@@ -45,7 +47,6 @@ if [[ $MB_ML_VER != "_2_24" ]]; then
 fi
 suppress build_tiff
 suppress build_lcms2
-suppress ensure_xz
 suppress build_freetype
 suppress build_libyaml
 if [ -z "$IS_MACOS" ]; then
