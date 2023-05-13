@@ -549,6 +549,7 @@ function install_pypy {
     "ppc64le") suffix="ppc64le";;
     "s390x")    suffix="s390x";;
     "aarch64")  suffix="aarch64";;
+    "arm64")  suffix="macos_arm64";;
     *) echo unknown platform "$PLAT"; exit 1;;
     esac
 
