@@ -451,7 +451,7 @@ function get_macpython_environment {
 
 function install_delocate {
     check_pip
-    $PIP_CMD install delocate
+    $PIP_CMD install git+https://github.com/radarhere/delocate.git@lib64
 }
 
 function repair_wheelhouse {
